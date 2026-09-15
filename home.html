@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shifts | Manage My Shifts</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/storage.js"></script>
+    <script src="js/session.js"></script>
+    <script>requireAuth();</script>
+</head>
+<body data-protected="true">
+    <header class="topbar">
+        <span class="logo">Manage My Shifts</span>
+        <nav>
+            <a href="home.html">My Shifts</a>
+            <a href="add-shift.html">Add Shift</a>
+            <a href="profile.html">Edit Profile</a>
+        </nav>
+        <div class="topbar-right">
+            <span id="greeting"></span>
+            <button type="button" id="logoutButton">Log out</button>
+        </div>
+    </header>
+
+    <main>
+        <p>Shifts table coming in issue #7.</p>
+    </main>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Manage My Shifts</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/storage.js"></script>
+    <script src="js/session.js"></script>
+    <script>requireGuest();</script>
+</head>
+<body>
+    <h1>Manage My Shifts</h1>
+    <p>Sign in to manage your shifts.</p>
+
+    <div id="formErrors"></div>
+
+    <form id="loginForm">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+
+        <button type="submit">Log in</button>
+    </form>
+
+    <p>Don't have an account? <a href="register.html">Create one</a>.</p>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
