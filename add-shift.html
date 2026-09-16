@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Add Shift | Manage My Shifts</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/storage.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/shifts.js"></script>
+    <script>requireAuth();</script>
+</head>
+<body data-protected="true">
+    <header class="topbar">
+        <span class="logo">Manage My Shifts</span>
+        <nav>
+            <a href="home.html">My Shifts</a>
+            <a href="add-shift.html">Add Shift</a>
+            <a href="profile.html">Edit Profile</a>
+        </nav>
+        <div class="topbar-right">
+            <span id="greeting"></span>
+            <button type="button" id="logoutButton">Log out</button>
+        </div>
+    </header>
+
+    <main>
+        <h1 id="formTitle">Add Shift</h1>
+
+        <div id="formErrors"></div>
+
+        <form id="shiftForm">
+            <label for="shiftDate">Date</label>
+            <input type="date" id="shiftDate" required>
+
+            <label for="startTime">Start time</label>
+            <input type="time" id="startTime" required>
+
+            <label for="endTime">End time</label>
+            <input type="time" id="endTime" required>
+
+            <label for="hourlyWage">Hourly wage</label>
+            <input type="number" id="hourlyWage" min="0" step="0.01" required>
+
+            <label for="workplaceSelect">Workplace</label>
+            <select id="workplaceSelect">
+                <option value="">Select a workplace</option>
+                <option value="__new__">+ New workplace</option>
+            </select>
+
+            <div id="newWorkplaceGroup" style="display: none;">
+                <label for="newWorkplace">New workplace name</label>
+                <input type="text" id="newWorkplace">
+            </div>
+
+            <label for="shiftName">Shift name</label>
+            <input type="text" id="shiftName" required>
+
+            <label for="comments">Comments (optional)</label>
+            <textarea id="comments" rows="3"></textarea>
+
+            <button type="submit" id="saveButton">Save shift</button>
+            <div id="savingIndicator" class="spinner" style="display: none;"></div>
+        </form>
+    </main>
+
+    <script src="js/add-shift.js"></script>
+</body>
+</html>
