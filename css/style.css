@@ -102,3 +102,63 @@ select, textarea {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 20px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #2c7be5;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.table-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+}
+
+#shiftsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#shiftsTable th, #shiftsTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.clickable-row {
+    cursor: pointer;
+}
+
+.clickable-row:hover {
+    background-color: #f0f4ff;
+}
+
+.best-month {
+    max-width: 900px;
+    margin: 20px auto 0;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#emptyState {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
