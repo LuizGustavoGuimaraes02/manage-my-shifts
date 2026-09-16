@@ -8,6 +8,15 @@ const savingIndicator = document.getElementById("savingIndicator");
 
 const currentUser = getCurrentUser();
 
+function getTodayLocalISO() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0"); // months are 0-indexed
+    const day = String(now.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
+
 const params = new URLSearchParams(window.location.search);
 const editingShiftId = params.get("id");
 const isEditMode = editingShiftId !== null;
@@ -67,8 +76,10 @@ function getSelectedWorkplace() {
 function validate(data) {
     const errors = [];
 
-    if (data.date === "") {
+     if (data.date === "") {
         errors.push("Date is required.");
+    } else if (data.date > getTodayLocalISO()) {
+        errors.push("Shift date cannot be in the future.");
     }
 
     if (data.startTime === "" || data.endTime === "") {
@@ -168,9 +179,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("greeting").textContent = "Hello, " + currentUser.firstName;
     document.getElementById("logoutButton").addEventListener("click", logout);
 
+    document.getElementById("shiftDate").max = getTodayLocalISO();
+
     if (isEditMode) {
         loadForEdit();
     } else {
         populateWorkplaces();
     }
 });
+
