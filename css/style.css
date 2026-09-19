@@ -162,3 +162,42 @@ select, textarea {
     margin: 40px auto;
     text-align: center;
 }
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+}
+
+.filter-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-field label {
+    font-size: 0.85em;
+    margin-bottom: 4px;
+}
+
+.filter-field select, .filter-field input {
+    padding: 8px;
+}
+
+.filter-bar button {
+    width: auto;
+    margin-top: 0;
+    padding: 8px 14px;
+}
+
+#noResultsMessage {
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+    color: #666;
+}

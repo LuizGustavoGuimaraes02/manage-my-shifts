@@ -26,35 +26,58 @@
     </header>
 
     <main>
-    <div class="page-header">
-        <h1>My Shifts</h1>
-        <a href="add-shift.html" class="button-link">+ Add Shift</a>
-    </div>
+        <div class="page-header">
+            <h1>My Shifts</h1>
+            <a href="add-shift.html" class="button-link">+ Add Shift</a>
+        </div>
 
-    <div id="emptyState" style="display: none;">
-        <p>You haven't added any shifts yet.</p>
-        <a href="add-shift.html" class="button-link">Add your first shift</a>
-    </div>
+        <div id="filterBar" class="filter-bar" style="display: none;">
+            <div class="filter-field">
+                <label for="filterPlace">Workplace</label>
+                <select id="filterPlace">
+                    <option value="">All</option>
+                </select>
+            </div>
 
-    <div id="tableWrapper" class="table-wrapper" style="display: none;">
-        <table id="shiftsTable">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Start</th>
-                    <th>End</th>
-                    <th>Hourly wage</th>
-                    <th>Place</th>
-                    <th>Profit</th>
-                </tr>
-            </thead>
-            <tbody id="shiftsTableBody">
-            </tbody>
-        </table>
-    </div>
+            <div class="filter-field">
+                <label for="filterFrom">From</label>
+                <input type="date" id="filterFrom">
+            </div>
 
-    <div id="bestMonth" class="best-month" style="display: none;"></div>
-</main>
+            <div class="filter-field">
+                <label for="filterTo">To</label>
+                <input type="date" id="filterTo">
+            </div>
+
+            <button type="button" id="clearFiltersButton">Clear filters</button>
+        </div>
+
+        <p id="noResultsMessage" style="display: none;">No shifts found for these filters.</p>
+
+        <div id="emptyState" style="display: none;">
+            <p>You haven't added any shifts yet.</p>
+            <a href="add-shift.html" class="button-link">Add your first shift</a>
+        </div>
+
+        <div id="tableWrapper" class="table-wrapper" style="display: none;">
+            <table id="shiftsTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Hourly wage</th>
+                        <th>Place</th>
+                        <th>Profit</th>
+                    </tr>
+                </thead>
+                <tbody id="shiftsTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="bestMonth" class="best-month" style="display: none;"></div>
+    </main>
 
     <script src="js/home.js"></script>
 </body>
