@@ -201,3 +201,125 @@ select, textarea {
     text-align: center;
     color: #666;
 }
+
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d32f2f;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+/* .topbar-right button has higher specificity (class + element) than
+   .icon-button alone (just a class), so it was winning and overriding
+   width/padding here — forcing this same combination to match it. */
+.topbar-right .icon-button {
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+    padding: 0;
+}
+
+.icon-button:hover {
+    background-color: #b71c1c;
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+   Mobile-first override: styles above this point are the
+   default (works from tablet width up). Below 600px, these
+   rules shrink things instead of stacking them — everything
+   stays in a row, just more compact.
+   ============================================================ */
+@media (max-width: 600px) {
+    body {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .topbar {
+        flex-wrap: nowrap;
+        gap: 6px;
+        padding: 8px 10px;
+    }
+
+    .topbar .logo {
+        font-size: 0.85em;
+    }
+
+    .topbar nav {
+        gap: 6px;
+    }
+
+    .topbar nav a {
+        font-size: 0.8em;
+        white-space: nowrap;
+    }
+
+    .topbar-right {
+        margin-left: 0;
+        gap: 6px;
+    }
+
+    .topbar-right span {
+        display: none;
+    }
+
+    .topbar-right button {
+        padding: 6px 8px;
+        font-size: 0.8em;
+        min-height: 32px;
+    }
+    }
+
+    .page-header {
+        gap: 8px;
+    }
+
+    .page-header h1 {
+        font-size: 1.2em;
+    }
+
+    .button-link {
+        padding: 6px 10px;
+        font-size: 0.85em;
+    }
+
+    .filter-bar {
+        flex-wrap: nowrap;
+        gap: 6px;
+        padding: 8px;
+        overflow-x: auto; /* if it still can't fit, it scrolls instead of breaking */
+    }
+
+    .filter-field {
+        min-width: 90px;
+        flex-shrink: 0;
+    }
+
+    .filter-field label {
+        font-size: 0.75em;
+    }
+
+    .filter-field select, .filter-field input {
+        padding: 5px;
+        font-size: 0.85em;
+        min-height: 32px;
+    }
+
+    .filter-bar button {
+        width: auto;
+        padding: 6px 10px;
+        font-size: 0.8em;
+        min-height: 32px;
+        flex-shrink: 0;
+    }
+
+    #shiftsTable th, #shiftsTable td {
+        padding: 6px 4px;
+        font-size: 0.8em;
+    }
+}
