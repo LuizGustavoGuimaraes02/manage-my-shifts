@@ -136,7 +136,7 @@ function clearFilters() {
 }
 
 function render() {
-    allShifts = getShiftsForUser(currentUser.username);
+    allShifts = getShiftsForUser(currentUser.id);
 
     const emptyState = document.getElementById("emptyState");
     const filterBar = document.getElementById("filterBar");

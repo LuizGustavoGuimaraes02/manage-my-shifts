@@ -38,6 +38,6 @@ loginForm.addEventListener("submit", function (event) {
         return;
     }
 
-    createSession(user.username);
+    createSession(user.id);
     window.location.replace("home.html");
 });

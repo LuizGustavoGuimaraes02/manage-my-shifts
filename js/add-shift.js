@@ -42,7 +42,7 @@ function showErrors(errors) {
 
 
 function populateWorkplaces(selectedPlace) {
-    const places = getShiftsForUser(currentUser.username)
+    const places = getShiftsForUser(currentUser.id)
         .map((shift) => shift.place);
 
 
@@ -76,7 +76,7 @@ function getSelectedWorkplace() {
 function validate(data) {
     const errors = [];
 
-     if (data.date === "") {
+    if (data.date === "") {
         errors.push("Date is required.");
     } else if (data.date > getTodayLocalISO()) {
         errors.push("Shift date cannot be in the future.");
@@ -99,7 +99,7 @@ function validate(data) {
 
     if (data.name === "") {
         errors.push("Shift name is required.");
-    } else if (isShiftNameTaken(currentUser.username, data.name, editingShiftId)) {
+    } else if (isShiftNameTaken(currentUser.id, data.name, editingShiftId)) {
         errors.push("You already have a shift with this name. Choose a different one.");
     }
 
@@ -131,7 +131,7 @@ shiftForm.addEventListener("submit", function (event) {
     savingIndicator.style.display = "inline-block";
 
     const shiftFields = {
-        username: currentUser.username,
+        userId: currentUser.id,
         date: data.date,
         startTime: data.startTime,
         endTime: data.endTime,
@@ -155,7 +155,7 @@ shiftForm.addEventListener("submit", function (event) {
 function loadForEdit() {
     const shift = getShiftById(editingShiftId);
 
-    if (shift === null || shift.username !== currentUser.username) {
+        if (shift === null || shift.userId !== currentUser.id) {
 
         window.location.replace("home.html");
         return;

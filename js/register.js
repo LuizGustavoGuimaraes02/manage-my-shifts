@@ -117,6 +117,7 @@ registerForm.addEventListener("submit", function (event) {
     showErrors([]);
 
     addUser({
+        id: crypto.randomUUID(),
         email: data.email,
         username: data.username,
         password: data.password,
@@ -125,6 +126,7 @@ registerForm.addEventListener("submit", function (event) {
         birthDate: data.birthDate,
         createdAt: new Date().toISOString()
     });
+
 
     createSession(data.username);
     window.location.replace("home.html");

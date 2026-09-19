@@ -35,3 +35,7 @@ function addUser(user) {
     users.push(user);
     saveUsers(users);
 }
+
+function findUserById(userId) {
+    return getUsers().find((user) => user.id === userId) || null;
+}

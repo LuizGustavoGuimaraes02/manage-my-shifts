@@ -19,8 +19,8 @@ function saveAllShifts(shifts) {
     localStorage.setItem(SHIFTS_KEY, JSON.stringify(shifts));
 }
 
-function getShiftsForUser(username) {
-    return getAllShifts().filter((shift) => shift.username === username);
+function getShiftsForUser(userId) {
+    return getAllShifts().filter((shift) => shift.userId === userId);
 }
 
 function getShiftById(shiftId) {
@@ -78,10 +78,10 @@ function calculateShiftProfit(shift) {
 }
 
 
-function isShiftNameTaken(username, shiftName, excludeShiftId = null) {
+function isShiftNameTaken(userId, shiftName, excludeShiftId = null) {
     const normalized = shiftName.trim().toLowerCase();
 
-    return getShiftsForUser(username).some((shift) =>
+    return getShiftsForUser(userId).some((shift) =>
         shift.id !== excludeShiftId &&
         shift.name.toLowerCase() === normalized
     );

@@ -1,9 +1,9 @@
 const SESSION_KEY = "mms_session";
 const SESSION_DURATION_MS = 60 * 60 * 1000;
 
-function createSession(username) {
+function createSession(userId) {
     const session = {
-        username: username,
+        userId: userId,
         expiresAt: Date.now() + SESSION_DURATION_MS
     };
 
@@ -45,7 +45,7 @@ function getCurrentUser() {
         return null;
     }
 
-    const user = findUserByUsername(session.username);
+    const user = findUserById(session.userId);
 
     if (user === null) {
         clearSession();
