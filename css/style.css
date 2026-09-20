@@ -351,6 +351,17 @@ a {
     background-color: var(--color-primary-hover);
 }
 
+.warning-box {
+    max-width: 400px;
+    margin: 20px auto 0;
+    padding: 15px;
+    background-color: #fdecea;
+    border: 1px solid var(--color-danger);
+    border-radius: var(--radius);
+    color: #611a15;
+    font-size: 0.9em;
+}
+
 /* ============================================================
    RESPONSIVE ADJUSTMENTS
    ============================================================ */

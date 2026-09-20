@@ -86,3 +86,9 @@ function isShiftNameTaken(userId, shiftName, excludeShiftId = null) {
         shift.name.toLowerCase() === normalized
     );
 }
+
+function deleteAllShiftsForUser(userId) {
+    const shifts = getAllShifts();
+    const remaining = shifts.filter((shift) => shift.userId !== userId);
+    saveAllShifts(remaining);
+}

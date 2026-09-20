@@ -39,3 +39,9 @@ function addUser(user) {
 function findUserById(userId) {
     return getUsers().find((user) => user.id === userId) || null;
 }
+
+function deleteUserById(userId) {
+    const users = getUsers();
+    const remaining = users.filter((user) => user.id !== userId);
+    saveUsers(remaining);
+}
