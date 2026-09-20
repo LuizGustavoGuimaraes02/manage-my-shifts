@@ -7,13 +7,15 @@
     <script src="js/storage.js"></script>
     <script src="js/session.js"></script>
     <script>requireGuest();</script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <h1>Create Account</h1>
+    <h1 class="form-title">Create Account</h1>
     <p>Register to start managing your shifts.</p>
 
     <div id="formErrors">
@@ -40,7 +42,7 @@
         <label for="birthDate">Birth Date</label>
         <input type="date" id="birthDate" name="birthDate" required>
 
-        <button type="submit">Register</button>
+        <button type="submit" class="btn-primary">Register</button>
         </form>
 
     </div>

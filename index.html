@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Manage My Shifts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="js/storage.js"></script>
@@ -11,7 +14,7 @@
     <script>requireGuest();</script>
 </head>
 <body>
-    <h1>Manage My Shifts</h1>
+    <h1 class="form-title">Manage My Shifts</h1>
     <p>Sign in to manage your shifts.</p>
 
     <div id="formErrors"></div>
@@ -23,7 +26,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" autocomplete="current-password" required>
 
-        <button type="submit">Log in</button>
+        <button type="submit" class="btn-primary">Log in</button>
     </form>
 
     <p>Don't have an account? <a href="register.html">Create one</a>.</p>
